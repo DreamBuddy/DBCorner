@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "RootViewController.h"
+#import "ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    UITabBarController *tabbar = UITabBarController.new;
+    self.window.rootViewController = tabbar;
+    
+    [tabbar addChildViewController:({
+        UIViewController *vc = ViewController.new;
+        vc.title = @"角度演示";
+        vc;
+    })];
+    [tabbar addChildViewController:({
+        RootViewController *vc = RootViewController.new;
+        vc.isSystemFunction = NO;
+        vc.title = @"性能演示-DBCorner";
+        vc;
+    })];
+    [tabbar addChildViewController:({
+        RootViewController *vc = RootViewController.new;
+        vc.isSystemFunction = YES;
+        vc.title = @"性能演示-系统圆角";
+        vc;
+    })];
+    
     return YES;
 }
 

@@ -14,6 +14,9 @@
 		6E4C21291E24E1F700394362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C21281E24E1F700394362 /* Assets.xcassets */; };
 		6E4C212C1E24E1F700394362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C212A1E24E1F700394362 /* LaunchScreen.storyboard */; };
 		6E4C213A1E2502C300394362 /* UIView+DBCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C21391E2502C300394362 /* UIView+DBCorner.m */; };
+		6E4C213D1E25055500394362 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C213C1E25055500394362 /* RootViewController.m */; };
+		6E4C21411E25096800394362 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C213F1E25096800394362 /* TableViewCell.m */; };
+		6E4C21421E25096800394362 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C21401E25096800394362 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,11 @@
 		6E4C212D1E24E1F700394362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4C21381E2502C300394362 /* UIView+DBCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DBCorner.h"; sourceTree = "<group>"; };
 		6E4C21391E2502C300394362 /* UIView+DBCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DBCorner.m"; sourceTree = "<group>"; };
+		6E4C213B1E25055500394362 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		6E4C213C1E25055500394362 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6E4C213E1E25096800394362 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		6E4C213F1E25096800394362 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		6E4C21401E25096800394362 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,11 @@
 				6E4C21201E24E1F700394362 /* AppDelegate.m */,
 				6E4C21221E24E1F700394362 /* ViewController.h */,
 				6E4C21231E24E1F700394362 /* ViewController.m */,
+				6E4C213B1E25055500394362 /* RootViewController.h */,
+				6E4C213C1E25055500394362 /* RootViewController.m */,
+				6E4C213E1E25096800394362 /* TableViewCell.h */,
+				6E4C213F1E25096800394362 /* TableViewCell.m */,
+				6E4C21401E25096800394362 /* TableViewCell.xib */,
 				6E4C21251E24E1F700394362 /* Main.storyboard */,
 				6E4C21281E24E1F700394362 /* Assets.xcassets */,
 				6E4C212A1E24E1F700394362 /* LaunchScreen.storyboard */,
@@ -124,6 +137,7 @@
 				TargetAttributes = {
 					6E4C21181E24E1F700394362 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7PR2M7JJX4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4C212C1E24E1F700394362 /* LaunchScreen.storyboard in Resources */,
+				6E4C21421E25096800394362 /* TableViewCell.xib in Resources */,
 				6E4C21291E24E1F700394362 /* Assets.xcassets in Resources */,
 				6E4C21271E24E1F700394362 /* Main.storyboard in Resources */,
 			);
@@ -165,9 +180,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4C21241E24E1F700394362 /* ViewController.m in Sources */,
+				6E4C21411E25096800394362 /* TableViewCell.m in Sources */,
 				6E4C21211E24E1F700394362 /* AppDelegate.m in Sources */,
 				6E4C211E1E24E1F700394362 /* main.m in Sources */,
 				6E4C213A1E2502C300394362 /* UIView+DBCorner.m in Sources */,
+				6E4C213D1E25055500394362 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +304,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7PR2M7JJX4;
 				INFOPLIST_FILE = DBCornerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.xu.DBCornerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,7 +317,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7PR2M7JJX4;
 				INFOPLIST_FILE = DBCornerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.xu.DBCornerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

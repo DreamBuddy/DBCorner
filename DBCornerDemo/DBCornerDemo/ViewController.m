@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = UIColor.whiteColor;
+    
     UIView *testUI1 = UIView.new;
     testUI1.frame = CGRectMake(100, 100, 200, 200);
     testUI1.backgroundColor = UIColor.grayColor;
