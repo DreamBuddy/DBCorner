@@ -16,32 +16,32 @@ static NSString *DBCornerLayerName = @"DBCornerShapeLayer";
 /**
  关于 CGPath 的 length 的计算请参看 http://www.mlsite.net/blog/?p=1312 与 http://stackoverflow.com/questions/6515158/get-info-about-a-cgpath-uibezierpath 在这里简单的计算就能满足要求因此不做过多讨论
  */
-float lengthOfCGPath (DBRoundCorner corner,CGFloat radius,CGSize size) {
+float lengthOfCGPath (UIRectCorner corner,CGFloat radius,CGSize size) {
     CGFloat totolLength = 2*(size.width + size.height);
-    if (corner & DBRoundCornerTopLeft) {
+    if (corner & UIRectCornerTopLeft) {
         totolLength -= (2*radius - (M_PI * radius)/2);
     }
-    if (corner & DBRoundCornerTopRight) {
+    if (corner & UIRectCornerTopRight) {
         totolLength -= (2*radius - (M_PI * radius)/2);
     }
-    if (corner & DBRoundCornerBottomLeft) {
+    if (corner & UIRectCornerBottomLeft) {
         totolLength -= (2*radius - (M_PI * radius)/2);
     }
-    if (corner & DBRoundCornerBottomRight) {
+    if (corner & UIRectCornerBottomRight) {
         totolLength -= (2*radius - (M_PI * radius)/2);
     }
     return totolLength;
 }
 
 - (void)db_roundingCornerWithRadius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderColor:(UIColor *)borderColor{
-    [self db_roundingCorner:DBRoundCornerAll radius:radius backgroundColor:bgColor borderColor:borderColor borderWidth:DB_SINGLE_LINE_WIDTH rect:CGRectNull];
+    [self db_roundingCorner:UIRectCornerAllCorners radius:radius backgroundColor:bgColor borderColor:borderColor borderWidth:DB_SINGLE_LINE_WIDTH rect:CGRectNull];
 }
 
 - (void)db_roundingCornerWithRadius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderColor:(UIColor *)borderColor borderWidth:(CGFloat )borderWidth{
-    [self db_roundingCorner:DBRoundCornerAll radius:radius backgroundColor:bgColor borderColor:borderColor borderWidth:borderWidth rect:CGRectNull];
+    [self db_roundingCorner:UIRectCornerAllCorners radius:radius backgroundColor:bgColor borderColor:borderColor borderWidth:borderWidth rect:CGRectNull];
 }
 
-- (void)db_roundingCorner:(DBRoundCorner)roundCorner radius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderColor:(UIColor *)borderColor borderWidth:(CGFloat )borderWidth rect:(CGRect)realRect{
+- (void)db_roundingCorner:(UIRectCorner)roundCorner radius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderColor:(UIColor *)borderColor borderWidth:(CGFloat )borderWidth rect:(CGRect)realRect{
     CGRect bounds = CGSizeEqualToSize(realRect.size, CGSizeZero) ? self.bounds : realRect;
     
     /*
