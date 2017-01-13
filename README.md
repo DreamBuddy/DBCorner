@@ -8,8 +8,12 @@
 
 
 ## 使用方法:
-1.直接拖入项目中使用
-2.support cocoapods: pod 'DBCorner'
+* 直接拖入项目中使用
+* cocoapods: 在podfile中添加 pod 'DBCorner'
 
-  欢迎体验，使用 联系:304511495@qq.com~
+## 最后
+* 如果我的项目对你有帮助欢迎 Star~
+* 如果在使用过程中遇到BUG，希望你能Issues我!
+* 如果在使用过程中发现功能不够用或者想交流的，希望你能Issues我，或者联系我QQ：304511495
+* 如果你想为DSRoundedImage输出代码，请拼命Pull Requests!
   
