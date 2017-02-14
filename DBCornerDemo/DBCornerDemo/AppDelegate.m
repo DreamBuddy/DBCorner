@@ -11,6 +11,7 @@
 #import "RootViewController.h"
 #import "ViewController.h"
 #import "MasonryViewController.h"
+#import "ImageViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,12 @@
     
     UITabBarController *tabbar = UITabBarController.new;
     self.window.rootViewController = tabbar;
+    
+    [tabbar addChildViewController:({
+        UIViewController *vc = ImageViewController.new;
+        vc.title = @"图片裁剪";
+        vc;
+    })];
     
     [tabbar addChildViewController:({
         UIViewController *vc = ViewController.new;

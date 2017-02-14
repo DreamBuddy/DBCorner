@@ -17,6 +17,8 @@
 		6E4C213D1E25055500394362 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C213C1E25055500394362 /* RootViewController.m */; };
 		6E4C21411E25096800394362 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C213F1E25096800394362 /* TableViewCell.m */; };
 		6E4C21421E25096800394362 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C21401E25096800394362 /* TableViewCell.xib */; };
+		6E4C65A11E53470C007F9587 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C65A01E53470C007F9587 /* ImageViewController.m */; };
+		6E4C65A41E53482A007F9587 /* UIImage+DBCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C65A31E53482A007F9587 /* UIImage+DBCorner.m */; };
 		6E7F9C4A1E5306960048F554 /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F9C491E5306960048F554 /* MasonryViewController.m */; };
 		B0FCA2F89239BD93C26332F1 /* libPods-DBCornerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0361C553C8CDA8F64AEC57 /* libPods-DBCornerDemo.a */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,11 @@
 		6E4C213E1E25096800394362 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		6E4C213F1E25096800394362 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		6E4C21401E25096800394362 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		6E4C659F1E53470C007F9587 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		6E4C65A01E53470C007F9587 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		6E4C65A21E53482A007F9587 /* UIImage+DBCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DBCorner.h"; sourceTree = "<group>"; };
+		6E4C65A31E53482A007F9587 /* UIImage+DBCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DBCorner.m"; sourceTree = "<group>"; };
+		6E4C65A81E536D20007F9587 /* DBBorderUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBBorderUtils.h; sourceTree = "<group>"; };
 		6E7F9C481E5306960048F554 /* MasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
 		6E7F9C491E5306960048F554 /* MasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
 		A5D3F8B19BC2F5DC160600D3 /* Pods-DBCornerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBCornerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBCornerDemo/Pods-DBCornerDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +114,8 @@
 				6E4C213F1E25096800394362 /* TableViewCell.m */,
 				6E7F9C481E5306960048F554 /* MasonryViewController.h */,
 				6E7F9C491E5306960048F554 /* MasonryViewController.m */,
+				6E4C659F1E53470C007F9587 /* ImageViewController.h */,
+				6E4C65A01E53470C007F9587 /* ImageViewController.m */,
 				6E4C21401E25096800394362 /* TableViewCell.xib */,
 				6E4C21251E24E1F700394362 /* Main.storyboard */,
 				6E4C21281E24E1F700394362 /* Assets.xcassets */,
@@ -130,6 +139,9 @@
 			children = (
 				6E4C21381E2502C300394362 /* UIView+DBCorner.h */,
 				6E4C21391E2502C300394362 /* UIView+DBCorner.m */,
+				6E4C65A21E53482A007F9587 /* UIImage+DBCorner.h */,
+				6E4C65A31E53482A007F9587 /* UIImage+DBCorner.m */,
+				6E4C65A81E536D20007F9587 /* DBBorderUtils.h */,
 			);
 			name = Class;
 			path = ../../Class;
@@ -259,8 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E4C65A41E53482A007F9587 /* UIImage+DBCorner.m in Sources */,
 				6E4C21241E24E1F700394362 /* ViewController.m in Sources */,
 				6E4C21411E25096800394362 /* TableViewCell.m in Sources */,
+				6E4C65A11E53470C007F9587 /* ImageViewController.m in Sources */,
 				6E4C21211E24E1F700394362 /* AppDelegate.m in Sources */,
 				6E4C211E1E24E1F700394362 /* main.m in Sources */,
 				6E7F9C4A1E5306960048F554 /* MasonryViewController.m in Sources */,

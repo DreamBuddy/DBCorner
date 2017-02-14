@@ -7,6 +7,7 @@
 //
 
 #import "UIView+DBCorner.h"
+#import "DBBorderUtils.h"
 
 static NSString *DBCornerLayerName = @"DBCornerShapeLayer";
 #define DB_SINGLE_LINE_WIDTH (1 / [UIScreen mainScreen].scale)
@@ -23,6 +24,13 @@ static NSString *DBCornerLayerName = @"DBCornerShapeLayer";
 }
 
 - (void)db_roundingCorner:(UIRectCorner)roundCorner radius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderColor:(UIColor *)borderColor borderWidth:(CGFloat )borderWidth rect:(CGRect)realRect{
+    [self db_roundingCorner:roundCorner radius:radius backgroundColor:bgColor borderConfig:^(CAShapeLayer *border){
+        border.strokeColor = borderColor.CGColor;
+        border.lineWidth = borderWidth;
+    } rect:realRect];
+}
+
+- (void)db_roundingCorner:(UIRectCorner)roundCorner radius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderConfig:(DBCommonBlock)borderConfig rect:(CGRect)realRect {
     CGRect bounds = CGSizeEqualToSize(realRect.size, CGSizeZero) ? self.bounds : realRect;
     bounds.size.width += .13*DB_Screen_Scale;
     bounds.size.height += .13*DB_Screen_Scale;
@@ -50,14 +58,14 @@ static NSString *DBCornerLayerName = @"DBCornerShapeLayer";
      */
     shapeLayer.fillRule = kCAFillRuleEvenOdd;
     shapeLayer.fillColor = bgColor.CGColor;
-    if (borderColor) {
+    if (borderConfig) {
         UIBezierPath *borderPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:roundCorner cornerRadii:CGSizeMake(radius, 0)];
         CAShapeLayer *borderLayer = [CAShapeLayer layer];
         borderLayer.path = borderPath.CGPath;
-        borderLayer.strokeColor = borderColor.CGColor;
-        borderLayer.lineWidth = borderWidth;
         borderLayer.fillColor = UIColor.clearColor.CGColor;
         [shapeLayer addSublayer:borderLayer];
+        
+        borderConfig(borderLayer);
     }
     if ([self isKindOfClass:[UILabel class]]) {
         //UILabel 机制不一样的  UILabel 设置 text 为 中文 也会造成图层混合 (iOS8 之后UILabel的layer层改成了 _UILabelLayer 具体可阅读 http://www.jianshu.com/p/db6602413fa3 )

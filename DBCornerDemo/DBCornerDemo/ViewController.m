@@ -35,7 +35,16 @@
         
         obj.backgroundColor = arcrandomColor();
         
-        [obj db_roundingCorner:arcrandomCorners() radius:(arc4random()%20+5) backgroundColor:self.view.backgroundColor borderColor:arcrandomColor() borderWidth:1 rect:CGRectNull];
+        if (arc4random()%2) {
+            [obj db_roundingCorner:arcrandomCorners() radius:(arc4random()%20+5) backgroundColor:self.view.backgroundColor borderColor:arcrandomColor() borderWidth:1 rect:CGRectNull];
+        } else {
+            [obj db_roundingCorner:arcrandomCorners() radius:(arc4random()%20+5) backgroundColor:self.view.backgroundColor borderConfig:^(CAShapeLayer *border){
+                border.strokeColor = arcrandomColor().CGColor;
+                border.lineWidth = 2;
+                border.lineDashPattern = @[@8, @8];
+                border.lineCap = kCALineCapRound;
+            } rect:CGRectNull];
+        }
         
     }];
     
