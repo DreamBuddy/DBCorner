@@ -24,3 +24,4 @@
 * 支持AutoLayout自动计算frame并且进行缓存
 * 全面支持UIImageView,API友好
   
+![image](https://github.com/DreamBuddy/DBCorner/blob/master/img/Simulator%20Screen%20Shot%202017%E5%B9%B42%E6%9C%8815%E6%97%A5%20%E4%B8%8A%E5%8D%883.04.10.png)
