@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DBCorner"
-  s.version      = “0.1.0”
+  s.version      = "0.1.0"
   s.summary      = "一行代码给任意视图添加高性能圆角，四个角可选 可添加描边属性"
 
   s.homepage     = "https://github.com/DreamBuddy/DBCorner.git"
