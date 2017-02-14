@@ -17,6 +17,8 @@
 		6E4C213D1E25055500394362 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C213C1E25055500394362 /* RootViewController.m */; };
 		6E4C21411E25096800394362 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C213F1E25096800394362 /* TableViewCell.m */; };
 		6E4C21421E25096800394362 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4C21401E25096800394362 /* TableViewCell.xib */; };
+		6E7F9C4A1E5306960048F554 /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F9C491E5306960048F554 /* MasonryViewController.m */; };
+		B0FCA2F89239BD93C26332F1 /* libPods-DBCornerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0361C553C8CDA8F64AEC57 /* libPods-DBCornerDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,11 @@
 		6E4C213E1E25096800394362 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		6E4C213F1E25096800394362 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		6E4C21401E25096800394362 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		6E7F9C481E5306960048F554 /* MasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
+		6E7F9C491E5306960048F554 /* MasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
+		A5D3F8B19BC2F5DC160600D3 /* Pods-DBCornerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBCornerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBCornerDemo/Pods-DBCornerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DA0361C553C8CDA8F64AEC57 /* libPods-DBCornerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBCornerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF8033A77FAA77B5039D3D59 /* Pods-DBCornerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBCornerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DBCornerDemo/Pods-DBCornerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FCA2F89239BD93C26332F1 /* libPods-DBCornerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E4410762D9A4AEDB2080D51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF8033A77FAA77B5039D3D59 /* Pods-DBCornerDemo.debug.xcconfig */,
+				A5D3F8B19BC2F5DC160600D3 /* Pods-DBCornerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		30DD9909FB7B2E4B2600FF26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA0361C553C8CDA8F64AEC57 /* libPods-DBCornerDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E4C21101E24E1F700394362 = {
 			isa = PBXGroup;
 			children = (
 				6E4C211B1E24E1F700394362 /* DBCornerDemo */,
 				6E4C211A1E24E1F700394362 /* Products */,
+				2E4410762D9A4AEDB2080D51 /* Pods */,
+				30DD9909FB7B2E4B2600FF26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +105,8 @@
 				6E4C213C1E25055500394362 /* RootViewController.m */,
 				6E4C213E1E25096800394362 /* TableViewCell.h */,
 				6E4C213F1E25096800394362 /* TableViewCell.m */,
+				6E7F9C481E5306960048F554 /* MasonryViewController.h */,
+				6E7F9C491E5306960048F554 /* MasonryViewController.m */,
 				6E4C21401E25096800394362 /* TableViewCell.xib */,
 				6E4C21251E24E1F700394362 /* Main.storyboard */,
 				6E4C21281E24E1F700394362 /* Assets.xcassets */,
@@ -113,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E4C21301E24E1F700394362 /* Build configuration list for PBXNativeTarget "DBCornerDemo" */;
 			buildPhases = (
+				3856A057AAD74BC94747530F /* [CP] Check Pods Manifest.lock */,
 				6E4C21151E24E1F700394362 /* Sources */,
 				6E4C21161E24E1F700394362 /* Frameworks */,
 				6E4C21171E24E1F700394362 /* Resources */,
+				A96738288A31B16B5075A6C8 /* [CP] Embed Pods Frameworks */,
+				F134A0F5CEC99B448874420D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +206,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3856A057AAD74BC94747530F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A96738288A31B16B5075A6C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DBCornerDemo/Pods-DBCornerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F134A0F5CEC99B448874420D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DBCornerDemo/Pods-DBCornerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E4C21151E24E1F700394362 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -183,6 +263,7 @@
 				6E4C21411E25096800394362 /* TableViewCell.m in Sources */,
 				6E4C21211E24E1F700394362 /* AppDelegate.m in Sources */,
 				6E4C211E1E24E1F700394362 /* main.m in Sources */,
+				6E7F9C4A1E5306960048F554 /* MasonryViewController.m in Sources */,
 				6E4C213A1E2502C300394362 /* UIView+DBCorner.m in Sources */,
 				6E4C213D1E25055500394362 /* RootViewController.m in Sources */,
 			);
@@ -302,6 +383,7 @@
 		};
 		6E4C21311E24E1F700394362 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF8033A77FAA77B5039D3D59 /* Pods-DBCornerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PR2M7JJX4;
@@ -315,6 +397,7 @@
 		};
 		6E4C21321E24E1F700394362 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D3F8B19BC2F5DC160600D3 /* Pods-DBCornerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PR2M7JJX4;

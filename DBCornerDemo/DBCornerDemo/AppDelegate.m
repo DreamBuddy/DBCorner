@@ -10,6 +10,7 @@
 
 #import "RootViewController.h"
 #import "ViewController.h"
+#import "MasonryViewController.h"
 
 @interface AppDelegate ()
 
@@ -41,6 +42,11 @@
         RootViewController *vc = RootViewController.new;
         vc.isSystemFunction = YES;
         vc.title = @"性能演示-系统圆角";
+        vc;
+    })];
+    [tabbar addChildViewController:({
+        MasonryViewController *vc = MasonryViewController.new;
+        vc.title = @"Masonry-自动布局";
         vc;
     })];
     
