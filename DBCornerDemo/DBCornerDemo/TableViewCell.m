@@ -8,6 +8,7 @@
 
 #import "TableViewCell.h"
 #import "UIView+DBCorner.h"
+#import "UIImage+DBCorner.h"
 
 @implementation TableViewCell
 
@@ -46,11 +47,22 @@
         self.photo4.layer.borderWidth = 1;
         self.photo4.layer.borderColor = UIColor.blackColor.CGColor;
     } else {
-        [self.photo1 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
-        [self.photo2 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
-        [self.photo3 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
-        [self.photo4 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
+//        [self.photo1 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
+//        [self.photo2 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
+//        [self.photo3 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
+//        [self.photo4 db_roundingCornerWithRadius:8 backgroundColor:UIColor.whiteColor borderColor:UIColor.blackColor];
         
+        
+        
+//        self.photo1.image = [[UIImage imageNamed:@"touxiang"] db_roundingCorner:UIRectCornerAllCorners radius:20 size:CGSizeMake(200, 200) backgroundColor:UIColor.clearColor borderColor:UIColor.redColor borderWidth:3 withContentMode:UIViewContentModeScaleAspectFit];
+//        self.photo2.image = [[UIImage imageNamed:@"touxiang"] db_roundingCorner:UIRectCornerAllCorners radius:20 size:CGSizeMake(200, 200) backgroundColor:UIColor.clearColor borderColor:UIColor.redColor borderWidth:3 withContentMode:UIViewContentModeScaleAspectFit];
+//        self.photo3.image = [[UIImage imageNamed:@"touxiang"] db_roundingCorner:UIRectCornerAllCorners radius:20 size:CGSizeMake(200, 200) backgroundColor:UIColor.clearColor borderColor:UIColor.redColor borderWidth:3 withContentMode:UIViewContentModeScaleAspectFit];
+//        self.photo4.image = [[UIImage imageNamed:@"touxiang"] db_roundingCorner:UIRectCornerAllCorners radius:20 size:CGSizeMake(200, 200) backgroundColor:UIColor.clearColor borderColor:UIColor.redColor borderWidth:3 withContentMode:UIViewContentModeScaleAspectFit];
+        
+        [self.photo1 db_roundingCornerUsingAutoLayout:UIRectCornerAllCorners radius:8 backgroundColor:UIColor.whiteColor borderConfig:nil];
+        [self.photo2 db_roundingCornerUsingAutoLayout:UIRectCornerAllCorners radius:8 backgroundColor:UIColor.whiteColor borderConfig:nil];
+        [self.photo3 db_roundingCornerUsingAutoLayout:UIRectCornerAllCorners radius:8 backgroundColor:UIColor.whiteColor borderConfig:nil];
+        [self.photo4 db_roundingCornerUsingAutoLayout:UIRectCornerAllCorners radius:8 backgroundColor:UIColor.whiteColor borderConfig:nil];
     }
 }
 

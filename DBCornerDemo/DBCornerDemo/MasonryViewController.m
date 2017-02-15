@@ -30,8 +30,15 @@
     }];
     roundView.backgroundColor = UIColor.redColor;
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [roundView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(0);
+            make.size.mas_equalTo(CGSizeMake(200, 40));
+        }];
+    });
+    
     /* 因为自动布局 无法立即获取控件的大小 所以需要手动设置下 */
-    [roundView db_roundingCorner:UIRectCornerAllCorners radius:15 backgroundColor:self.view.backgroundColor borderColor:UIColor.clearColor borderWidth:0 rect:CGRectMake(0, 0, 100, 80)];
+    [roundView db_roundingCornerUsingAutoLayout:UIRectCornerAllCorners radius:20 backgroundColor:self.view.backgroundColor borderConfig:nil];
 }
 
 - (void)didReceiveMemoryWarning {

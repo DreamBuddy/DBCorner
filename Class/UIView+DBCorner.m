@@ -8,10 +8,18 @@
 
 #import "UIView+DBCorner.h"
 #import "DBBorderUtils.h"
+#import <objc/runtime.h>
 
 static NSString *DBCornerLayerName = @"DBCornerShapeLayer";
 #define DB_SINGLE_LINE_WIDTH (1 / [UIScreen mainScreen].scale)
 #define DB_Screen_Scale ([UIScreen mainScreen].scale)
+
+@interface UIView ()
+
+@property (nonatomic, assign) CGRect dbCornerFrame;
+@property (nonatomic ,copy) DBCommonBlock dbLayoutBlock;
+
+@end
 
 @implementation UIView (DBCorner)
 
@@ -31,9 +39,26 @@ static NSString *DBCornerLayerName = @"DBCornerShapeLayer";
 }
 
 - (void)db_roundingCorner:(UIRectCorner)roundCorner radius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderConfig:(DBCommonBlock)borderConfig rect:(CGRect)realRect {
+    [self _db_roundingCorner:roundCorner radius:radius backgroundColor:bgColor borderConfig:borderConfig rect:realRect];
+}
+
+- (void)db_roundingCornerUsingAutoLayout:(UIRectCorner)roundCorner radius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderConfig:(DBCommonBlock)borderConfig {
+    if (!CGSizeEqualToSize(self.frame.size, CGSizeZero)) {
+        self.dbCornerFrame = self.frame;
+        [self _db_roundingCorner:roundCorner radius:radius backgroundColor:bgColor borderConfig:borderConfig rect:self.dbCornerFrame];
+    }
+    __weak typeof(self) weakSelf = self;
+    [self setDbLayoutBlock:^(CGRect rect){
+        [weakSelf _db_roundingCorner:roundCorner radius:radius backgroundColor:bgColor borderConfig:borderConfig rect:rect];
+    }];
+}
+
+- (void)_db_roundingCorner:(UIRectCorner)roundCorner radius:(CGFloat)radius backgroundColor:(UIColor *)bgColor borderConfig:(DBCommonBlock)borderConfig rect:(CGRect)realRect {
     CGRect bounds = CGSizeEqualToSize(realRect.size, CGSizeZero) ? self.bounds : realRect;
     bounds.size.width += .13*DB_Screen_Scale;
     bounds.size.height += .13*DB_Screen_Scale;
+    bounds.origin.x = 0;
+    bounds.origin.y = 0;
     /*
      需要 优化 AutoLayout 自动计算
      CGSize size = [customContentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
@@ -97,6 +122,30 @@ static NSString *DBCornerLayerName = @"DBCornerShapeLayer";
         }
     }
     return NO;
+}
+
+-(void)layoutSubviews {
+    if (self.dbLayoutBlock && !CGSizeEqualToSize(self.frame.size,self.dbCornerFrame.size)) {
+        self.dbCornerFrame = self.frame;
+        self.dbLayoutBlock(self.dbCornerFrame);
+    }
+}
+
+#pragma mark -- private
+
+-(void)setDbCornerFrame:(CGRect)dbCornerFrame{
+    objc_setAssociatedObject(self, @selector(dbCornerFrame), [NSValue valueWithCGRect:dbCornerFrame], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(CGRect)dbCornerFrame{
+    NSValue *value = objc_getAssociatedObject(self, _cmd);
+    return value.CGRectValue;
+}
+
+-(void)setDbLayoutBlock:(DBCommonBlock)dbLayoutBlock{
+    objc_setAssociatedObject(self, @selector(dbLayoutBlock), dbLayoutBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+-(DBCommonBlock)dbLayoutBlock{
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 @end
