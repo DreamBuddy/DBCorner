@@ -38,7 +38,10 @@
     });
     
     /* 因为自动布局 无法立即获取控件的大小 所以需要手动设置下 */
-    [roundView db_roundingCornerUsingAutoLayout:UIRectCornerAllCorners radius:20 backgroundColor:self.view.backgroundColor borderConfig:nil];
+    [roundView db_roundingCornerUsingAutoLayout:UIRectCornerAllCorners radius:20 backgroundColor:self.view.backgroundColor borderConfig:^(CAShapeLayer *border){
+        border.lineWidth = 1;
+        border.strokeColor = UIColor.blackColor.CGColor;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
